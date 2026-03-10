@@ -56,6 +56,7 @@ int number = int.Parse(numberInput);
 int square = number * number;
 Console.WriteLine("Das Quadrat der Zahl ist: " + square);
 
+
 // ==={ AUFGABE 2 }===
 
 // Aufgabe 2.1
@@ -71,6 +72,7 @@ else
 {
     Console.WriteLine("Klein");
 }
+Console.WriteLine("--------------------");
 
 // Aufgabe 2.2
 
@@ -85,6 +87,7 @@ else
 {
     Console.WriteLine("Nicht bestanden");
 }
+Console.WriteLine("--------------------");
 
 // Aufgabe 2.3
 
@@ -111,6 +114,7 @@ else
 {
     Console.WriteLine("Nicht bestanden");
 }
+Console.WriteLine("--------------------");
 
 // Aufgabe 2.4
 
@@ -125,6 +129,7 @@ else
 {
     Console.WriteLine("Minderjährig");
 }
+Console.WriteLine("--------------------");
 
 // Aufgabe 2.5
 
@@ -139,6 +144,7 @@ else
 {
     Console.WriteLine("Ungerade");
 }
+Console.WriteLine("--------------------");
 
 // Aufgabe 2.6
 
@@ -160,3 +166,4 @@ else
 {
     Console.WriteLine("Beide Zahlen sind gleich.");
 }
+Console.WriteLine("--------------------");
