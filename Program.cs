@@ -1,4 +1,8 @@
-﻿// ==={ AUFGABE 1 }===
+﻿using projekt_hagrid.models;
+using System;
+using System.Collections.Generic;
+
+// ==={ AUFGABE 1 }===
 
 // Aufgabe 1.1
 
@@ -173,165 +177,202 @@
 
 // Aufgabe 3.1
 
-int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 };
-Console.WriteLine("Die Zahlen sind:");
-foreach (int n in numbers)
-{
-    Console.Write(n + " ");
-}
-Console.WriteLine();
+// using projekt_hagrid.models;
+
+// int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 };
+// Console.WriteLine("Die Zahlen sind:");
+// foreach (int n in numbers)
+// {
+//     Console.Write(n + " ");
+// }
+// Console.WriteLine();
+// Console.WriteLine("--------------------");
+
+// // Aufgabe 3.2
+
+// int[] numbers2 = Enumerable.Range(1, 50).ToArray();
+// Console.WriteLine("Die geraden Zahlen von 1 bis 50 sind:");
+// foreach (int n in numbers2)
+// {
+//     if (n % 2 == 0)
+//     {
+//         Console.Write(n + " ");
+//     }
+// }
+// Console.WriteLine();
+// Console.WriteLine("--------------------");
+
+// // Aufgabe 3.3
+
+// int[] numbers3 = Enumerable.Range(1, 100).ToArray();
+// int sum = numbers3.Sum();
+// Console.WriteLine("Die Summe der Zahlen von 1 bis 100 ist: " + sum);
+// Console.WriteLine("--------------------");
+
+// // Aufgabe 3.4
+
+// Console.WriteLine("Geben Sie eine Zahl ein:");
+// string numberInput4 = Console.ReadLine();
+// int number4 = int.Parse(numberInput4);
+// int[] numbers4 = Enumerable.Range(1, number4).ToArray();
+// Console.WriteLine($"Die Zahlen von 1 bis {number4} sind:");
+// foreach (int n in numbers4)
+// {
+//     Console.Write(n + " ");
+// }
+// Console.WriteLine();
+// Console.WriteLine("--------------------");
+
+// // Aufgabe 3.5
+
+// Console.WriteLine("Geben Sie eine Zahl ein:");
+// string numberInput5 = Console.ReadLine();
+// int number5 = int.Parse(numberInput5);
+// for (int i = 1; i <= number5; i++)
+// {
+//     for (int j = 1; j <= number5; j++)
+//     {
+//         Console.Write($"{i * j}\t");
+//     }
+//     Console.WriteLine();
+// }
+// Console.WriteLine("--------------------");
+
+// // Aufgabe 3.6
+
+// int[] numbers6 = Enumerable.Range(1, 10).ToArray();
+// Console.WriteLine("Die Zahlen von 1 bis 10 in umgekehrter Reihenfolge sind:");
+// for (int i = numbers6.Length - 1; i >= 0; i--)
+// {
+//     Console.Write(numbers6[i] + " ");
+// }
+// Console.WriteLine();
+// Console.WriteLine("--------------------");
+
+// // ==={ AUFGABE 4 }===
+
+// // Aufgabe 4.1
+
+// string SagHallo()
+// {
+//     return "Hallo!";
+// }
+// Console.WriteLine(SagHallo());
+// Console.WriteLine("--------------------");
+
+// // Aufgabe 4.2
+
+// int Addiere(int a, int b)
+// {
+//     return a + b;
+// }
+// Console.WriteLine(Addiere(5, 10));
+// Console.WriteLine("--------------------");
+
+// // Aufgabe 4.3
+
+// string IstGerade(int zahl)
+// {
+//     if (zahl % 2 == 0)
+//     {
+//         return "Gerade";
+//     }
+//     else
+//     {
+//         return "Ungerade";
+//     }
+// }
+// Console.WriteLine(IstGerade(4));
+// Console.WriteLine(IstGerade(7));
+// Console.WriteLine("--------------------");
+
+// // Aufgabe 4.4
+
+// int Quadrat(int zahl)
+// {
+//     return zahl * zahl;
+// }
+// Console.WriteLine(Quadrat(5));
+// Console.WriteLine("--------------------");
+
+// // Aufgabe 4.5
+
+// int Max(int a, int b)
+// {
+//     if (a > b)
+//     {
+//         return a;
+//     }
+//     else
+//     {
+//         return b;
+//     }
+// }
+// Console.WriteLine($"Max(5, 10): {Max(5, 10)}");
+// Console.WriteLine("--------------------");
+
+// // Aufgabe 4.6
+
+// string NoteBerechnen(int punktzahl)
+// {
+//     if (punktzahl >= 90)
+//     {
+//         return "Note 1";
+//     }
+//     else if (punktzahl >= 80)
+//     {
+//         return "Note 2";
+//     }
+//     else if (punktzahl >= 70)
+//     {
+//         return "Note 3";
+//     }
+//     else if (punktzahl >= 60)
+//     {
+//         return "Note 4";
+//     }
+//     else
+//     {
+//         return "Nicht bestanden";
+//     }
+// }
+// Console.WriteLine("Gib deine Punktzahl ein:");
+// string punktzahlInput = Console.ReadLine();
+// int punktzahl = int.Parse(punktzahlInput);
+// Console.WriteLine(NoteBerechnen(punktzahl));
+// Console.WriteLine("--------------------");
+
+// ==={ AUFGABE 5 }===
+
+// Aufgabe 5.2
+
+Auto polo = new Auto("VW Polo", 2010);
+Console.WriteLine($"Auto: {polo.Marke}, Baujahr: {polo.Baujahr}");
+Console.WriteLine("--------------------");
+// Aufgabe 5.3
+
+Auto benz = new Auto("Mercedes-Benz", 2015);
+Console.WriteLine($"Auto: {benz.Marke}, Baujahr: {benz.Baujahr}");
 Console.WriteLine("--------------------");
 
-// Aufgabe 3.2
+// Aufgabe 5.5
 
-int[] numbers2 = Enumerable.Range(1, 50).ToArray();
-Console.WriteLine("Die geraden Zahlen von 1 bis 50 sind:");
-foreach (int n in numbers2)
-{
-    if (n % 2 == 0)
-    {
-        Console.Write(n + " ");
-    }
-}
-Console.WriteLine();
+polo.Fahren(80);
+benz.Fahren(120);
 Console.WriteLine("--------------------");
 
-// Aufgabe 3.3
+// Aufgabe 5.6
 
-int[] numbers3 = Enumerable.Range(1, 100).ToArray();
-int sum = numbers3.Sum();
-Console.WriteLine("Die Summe der Zahlen von 1 bis 100 ist: " + sum);
-Console.WriteLine("--------------------");
-
-// Aufgabe 3.4
-
-Console.WriteLine("Geben Sie eine Zahl ein:");
-string numberInput4 = Console.ReadLine();
-int number4 = int.Parse(numberInput4);
-int[] numbers4 = Enumerable.Range(1, number4).ToArray();
-Console.WriteLine($"Die Zahlen von 1 bis {number4} sind:");
-foreach (int n in numbers4)
+List<Auto> autos = new List<Auto>
 {
-    Console.Write(n + " ");
+    new Auto("VW Golf", 2012),
+    new Auto("Audi A4", 2018),
+    new Auto("BMW 3er", 2020),
+    new Auto("Mercedes-Benz C-Klasse", 2019),
+    new Auto("Ford Focus", 2014)
+};
+Console.WriteLine("Autos in der Liste:");
+foreach (Auto auto in autos){
+    Console.WriteLine($"Auto: {auto.Marke}, Baujahr: {auto.Baujahr}");
 }
-Console.WriteLine();
-Console.WriteLine("--------------------");
-
-// Aufgabe 3.5
-
-Console.WriteLine("Geben Sie eine Zahl ein:");
-string numberInput5 = Console.ReadLine();
-int number5 = int.Parse(numberInput5);
-for (int i = 1; i <= number5; i++)
-{
-    for (int j = 1; j <= number5; j++)
-    {
-        Console.Write($"{i * j}\t");
-    }
-    Console.WriteLine();
-}
-Console.WriteLine("--------------------");
-
-// Aufgabe 3.6
-
-int[] numbers6 = Enumerable.Range(1, 10).ToArray();
-Console.WriteLine("Die Zahlen von 1 bis 10 in umgekehrter Reihenfolge sind:");
-for (int i = numbers6.Length - 1; i >= 0; i--)
-{
-    Console.Write(numbers6[i] + " ");
-}
-Console.WriteLine();
-Console.WriteLine("--------------------");
-
-// ==={ AUFGABE 4 }===
-
-// Aufgabe 4.1
-
-string SagHallo()
-{
-    return "Hallo!";
-}
-Console.WriteLine(SagHallo());
-Console.WriteLine("--------------------");
-
-// Aufgabe 4.2
-
-int Addiere(int a, int b)
-{
-    return a + b;
-}
-Console.WriteLine(Addiere(5, 10));
-Console.WriteLine("--------------------");
-
-// Aufgabe 4.3
-
-string IstGerade(int zahl)
-{
-    if (zahl % 2 == 0)
-    {
-        return "Gerade";
-    }
-    else
-    {
-        return "Ungerade";
-    }
-}
-Console.WriteLine(IstGerade(4));
-Console.WriteLine(IstGerade(7));
-Console.WriteLine("--------------------");
-
-// Aufgabe 4.4
-
-int Quadrat(int zahl)
-{
-    return zahl * zahl;
-}
-Console.WriteLine(Quadrat(5));
-Console.WriteLine("--------------------");
-
-// Aufgabe 4.5
-
-int Max(int a, int b)
-{
-    if (a > b)
-    {
-        return a;
-    }
-    else
-    {
-        return b;
-    }
-}
-Console.WriteLine($"Max(5, 10): {Max(5, 10)}");
-Console.WriteLine("--------------------");
-
-// Aufgabe 4.6
-
-string NoteBerechnen(int punktzahl)
-{
-    if (punktzahl >= 90)
-    {
-        return "Note 1";
-    }
-    else if (punktzahl >= 80)
-    {
-        return "Note 2";
-    }
-    else if (punktzahl >= 70)
-    {
-        return "Note 3";
-    }
-    else if (punktzahl >= 60)
-    {
-        return "Note 4";
-    }
-    else
-    {
-        return "Nicht bestanden";
-    }
-}
-Console.WriteLine("Gib deine Punktzahl ein:");
-string punktzahlInput = Console.ReadLine();
-int punktzahl = int.Parse(punktzahlInput);
-Console.WriteLine(NoteBerechnen(punktzahl));
 Console.WriteLine("--------------------");
