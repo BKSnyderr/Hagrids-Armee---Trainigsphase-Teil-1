@@ -526,3 +526,38 @@ benz.Info();
 bmw.Info();
 
 Console.WriteLine("--------------------");
+
+// ==={ AUFGABE 7 }===
+
+// Aufgabe 7.3
+
+List<Student> studenten = new List<Student>{};
+
+// Aufgabe 7.4
+
+studenten.Add(new Student("Alice", 20));
+studenten.Add(new Student("Bob", 22));
+studenten.Add(new Student("Charlie", 19));
+studenten.Add(new Student("Diana", 21));
+studenten.Add(new Student("Eve", 23));
+
+// Aufgabe 7.5
+
+Console.WriteLine("==={ AUFGABE 7.5 }===");
+
+Console.WriteLine("Studenten in der Liste:");
+
+foreach (Student student in studenten)
+{
+    Console.WriteLine($"Name: {student.Name}, Alter: {student.Alter}");
+}
+
+Console.WriteLine("---------------------");
+
+// Aufgabe 7.6
+
+Console.WriteLine("==={ AUFGABE 7.6 }===");
+
+Console.WriteLine($"Es gibt {studenten.Count} Studenten in der Liste.");
+
+Console.WriteLine("---------------------");
