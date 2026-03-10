@@ -242,4 +242,96 @@ for (int i = numbers6.Length - 1; i >= 0; i--)
 }
 Console.WriteLine();
 Console.WriteLine("--------------------");
-    
+
+// ==={ AUFGABE 4 }===
+
+// Aufgabe 4.1
+
+string SagHallo()
+{
+    return "Hallo!";
+}
+Console.WriteLine(SagHallo());
+Console.WriteLine("--------------------");
+
+// Aufgabe 4.2
+
+int Addiere(int a, int b)
+{
+    return a + b;
+}
+Console.WriteLine(Addiere(5, 10));
+Console.WriteLine("--------------------");
+
+// Aufgabe 4.3
+
+string IstGerade(int zahl)
+{
+    if (zahl % 2 == 0)
+    {
+        return "Gerade";
+    }
+    else
+    {
+        return "Ungerade";
+    }
+}
+Console.WriteLine(IstGerade(4));
+Console.WriteLine(IstGerade(7));
+Console.WriteLine("--------------------");
+
+// Aufgabe 4.4
+
+int Quadrat(int zahl)
+{
+    return zahl * zahl;
+}
+Console.WriteLine(Quadrat(5));
+Console.WriteLine("--------------------");
+
+// Aufgabe 4.5
+
+int Max(int a, int b)
+{
+    if (a > b)
+    {
+        return a;
+    }
+    else
+    {
+        return b;
+    }
+}
+Console.WriteLine($"Max(5, 10): {Max(5, 10)}");
+Console.WriteLine("--------------------");
+
+// Aufgabe 4.6
+
+string NoteBerechnen(int punktzahl)
+{
+    if (punktzahl >= 90)
+    {
+        return "Note 1";
+    }
+    else if (punktzahl >= 80)
+    {
+        return "Note 2";
+    }
+    else if (punktzahl >= 70)
+    {
+        return "Note 3";
+    }
+    else if (punktzahl >= 60)
+    {
+        return "Note 4";
+    }
+    else
+    {
+        return "Nicht bestanden";
+    }
+}
+Console.WriteLine("Gib deine Punktzahl ein:");
+string punktzahlInput = Console.ReadLine();
+int punktzahl = int.Parse(punktzahlInput);
+Console.WriteLine(NoteBerechnen(punktzahl));
+Console.WriteLine("--------------------");
