@@ -11,6 +11,11 @@ public class Auto
         Baujahr = baujahr;
     }
 
+    public void Info()
+    {
+        Console.WriteLine($"Auto: {Marke}, Baujahr: {Baujahr}");
+    }
+
     public void Fahren(int geschwindigkeit)
     {
         Console.WriteLine($"{Marke} fährt mit {geschwindigkeit} km/h.");
