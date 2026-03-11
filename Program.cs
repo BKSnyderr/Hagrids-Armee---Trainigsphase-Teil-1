@@ -760,9 +760,51 @@ Console.WriteLine("==={ AUFGABE 9.6 }===");
 Console.WriteLine();
 
 var studentenNamen = studenten.Select(s => s.Name);
-foreach (string name in studentenNamen)
+foreach (string Name in studentenNamen)
 {
-    Console.WriteLine($"Name: {name}");
+    Console.WriteLine($"Name: {Name}");
+}
+
+Console.WriteLine("---------------------");
+
+// ==={ AUFGABE 10 }===
+
+// Aufgabe 10.1 + 10.2
+
+Console.WriteLine("==={ AUFGABE 10.1 }===");
+Console.WriteLine();
+
+double Division(int a, int b)
+{
+    if (b == 0)
+    {
+        Console.WriteLine("Fehler: Division durch Null ist nicht erlaubt.");
+        return double.NaN; // Rückgabe von NaN (Not a Number) bei Division durch Null
+    }
+    return a / b;
+}
+
+Console.WriteLine(Division(10, 2));
+Console.WriteLine(Division(10, 0));
+
+Console.WriteLine("---------------------");
+
+// Aufgabe 10.3 + 10.4 + 10.5 + 10.6
+
+Console.WriteLine("==={ AUFGABE 10.3 }===");
+Console.WriteLine();
+
+Console.WriteLine("Geben Sie eine Zahl ein:");
+
+string eingabeZahl = Console.ReadLine();
+int zahl = int.TryParse(eingabeZahl, out int result) ? result : 0;
+if(zahl == 0)
+{
+    Console.WriteLine("Ungültige Eingabe. Keine Zahl.");
+}
+else
+{
+    Console.WriteLine($"Die eingegebene Zahl ist: {zahl}");
 }
 
 Console.WriteLine("---------------------");
