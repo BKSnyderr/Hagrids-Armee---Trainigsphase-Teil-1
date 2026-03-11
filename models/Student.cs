@@ -1,4 +1,4 @@
-namespace projekt_hagrid.models;
+namespace projekt_hagrid.Models;
 
 public class Student
 {
