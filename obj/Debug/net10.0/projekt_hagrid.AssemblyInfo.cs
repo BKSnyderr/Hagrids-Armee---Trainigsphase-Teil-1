@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("projekt_hagrid")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+70f68ad4fc1791fa2f894248093ae06a96ff972e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a84130b24dfb9f56876cde4f987e52d56954ce8b")]
 [assembly: System.Reflection.AssemblyProductAttribute("projekt_hagrid")]
 [assembly: System.Reflection.AssemblyTitleAttribute("projekt_hagrid")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
