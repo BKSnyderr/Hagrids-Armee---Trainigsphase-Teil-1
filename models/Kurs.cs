@@ -5,12 +5,14 @@ public class Kurs
     public string Titel { get; set; }
     public int MaxTeilnehmer { get; set; }
     public List<Student> Teilnehmer { get; set; }
+    public KursStatus Status { get; set; }
 
-    public Kurs(string titel, int maxTeilnehmer)
+    public Kurs(string titel, int maxTeilnehmer, KursStatus offen)
     {
         Titel = titel;
         MaxTeilnehmer = maxTeilnehmer;
         Teilnehmer = new List<Student>();
+        Status = offen;
     }
 
     public void zeigeTeilnehmer()
