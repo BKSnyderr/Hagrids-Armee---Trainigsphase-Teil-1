@@ -1143,27 +1143,14 @@ student2.Bewertungen.Add(new Bewertung(88));
 student3.Bewertungen.Add(new Bewertung(95));
 student3.Bewertungen.Add(new Bewertung(87));
 
+Kurs mathematik = new Kurs("Mathematik", 20, KursStatus.Offen);
 
-List<Student> studenten = new List<Student> { student1, student2, student3 };
+mathematik._teilnehmer.Add(student1);
+mathematik._teilnehmer.Add(student2);
+mathematik._teilnehmer.Add(student3);
 
-var alleBewertungen = studenten.SelectMany(s => s.Bewertungen).ToList();
+student1.StatistikAnzeigen();
+student2.StatistikAnzeigen();
+student3.StatistikAnzeigen();
 
-if (alleBewertungen.Count > 0)
-{
-    int bestanden = alleBewertungen.Count(b => b.BestandenPruefen());
-    int durchgefallen = alleBewertungen.Count(b => !b.BestandenPruefen());
-    double durchschnitt = alleBewertungen.Average(b => b.NoteBerechnen());
-    double besteNote = alleBewertungen.Min(b => b.NoteBerechnen());
-
-    Console.WriteLine("\n=== Gesamtstatistik ===");
-    Console.WriteLine($"Anzahl Studenten: {studenten.Count}");
-    Console.WriteLine($"Anzahl Bewertungen: {alleBewertungen.Count}");
-    Console.WriteLine($"Bestanden: {bestanden}");
-    Console.WriteLine($"Durchgefallen: {durchgefallen}");
-    Console.WriteLine($"Durchschnittsnote: {durchschnitt:F2}");
-    Console.WriteLine($"Beste Note insgesamt: {besteNote:F1}");
-}
-else
-{
-    Console.WriteLine("Es sind keine Bewertungen vorhanden.");
-}
+mathematik.StatistikAnzeigen();
