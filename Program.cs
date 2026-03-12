@@ -1003,129 +1003,167 @@ using System.Linq;
 
 // Aufgabe ==={ 14 }===
 
-Console.WriteLine("==={ AUFGABE 14 }===");
-Console.WriteLine();
+// Console.WriteLine("==={ AUFGABE 14 }===");
+// Console.WriteLine();
 
-Kurs Informatik = new Kurs("Informatik", 3, KursStatus.Offen);
+// Kurs Informatik = new Kurs("Informatik", 3, KursStatus.Offen);
 
-Console.WriteLine("Kursinformationen:\n");
-Console.WriteLine($"- {Informatik.Titel}, Max. Teilnehmer: {Informatik.MaxTeilnehmer}, Status: {Informatik.Status}");
-Console.WriteLine();
-Console.WriteLine("|- Menü -|");
-Console.WriteLine("1. Student hinzufügen");
-Console.WriteLine("2. Student anzeigen");
-Console.WriteLine("3. Statistik anzeigen");
-Console.WriteLine("4. Status anzeigen");
-Console.WriteLine("5. Status ändern");
-Console.WriteLine("6. Programm beenden");
+// Console.WriteLine("Kursinformationen:\n");
+// Console.WriteLine($"- {Informatik.Titel}, Max. Teilnehmer: {Informatik.MaxTeilnehmer}, Status: {Informatik.Status}");
+// Console.WriteLine();
+// Console.WriteLine("|- Menü -|");
+// Console.WriteLine("1. Student hinzufügen");
+// Console.WriteLine("2. Student anzeigen");
+// Console.WriteLine("3. Statistik anzeigen");
+// Console.WriteLine("4. Status anzeigen");
+// Console.WriteLine("5. Status ändern");
+// Console.WriteLine("6. Programm beenden");
 
-bool laeuft = true;
+// bool laeuft = true;
 
-while (laeuft)
-{
-    Console.WriteLine("Wählen Sie eine Option (1-6):");
-    // Console.WriteLine("oder mit 'exit' das Programm beenden");
+// while (laeuft)
+// {
+//     Console.WriteLine("Wählen Sie eine Option (1-6):");
+//     // Console.WriteLine("oder mit 'exit' das Programm beenden");
 
-    string eingabe = Console.ReadLine().Trim();
-    Enum.TryParse<MenuOptionen>(eingabe, out MenuOptionen option);
+//     string eingabe = Console.ReadLine().Trim();
+//     Enum.TryParse<MenuOptionen>(eingabe, out MenuOptionen option);
 
-    switch (option)
-    {
-        case MenuOptionen.StudentHinzufuegen:
-            if(Informatik.Status == KursStatus.Voll)
-            {
-                Console.WriteLine("Der Kurs ist voll. Kein weiterer Student kann hinzugefügt werden.");
-                break;
-            }
-            if(Informatik.Status == KursStatus.Abgeschlossen)
-            {
-                Console.WriteLine("Der Kurs ist abgeschlossen. Kein weiterer Student kann hinzugefügt werden.");
-                break;
-            }
-            Console.WriteLine("Student hinzufügen");
-            Console.Write("Name: ");
+//     switch (option)
+//     {
+//         case MenuOptionen.StudentHinzufuegen:
+//             if(Informatik.Status == KursStatus.Voll)
+//             {
+//                 Console.WriteLine("Der Kurs ist voll. Kein weiterer Student kann hinzugefügt werden.");
+//                 break;
+//             }
+//             if(Informatik.Status == KursStatus.Abgeschlossen)
+//             {
+//                 Console.WriteLine("Der Kurs ist abgeschlossen. Kein weiterer Student kann hinzugefügt werden.");
+//                 break;
+//             }
+//             Console.WriteLine("Student hinzufügen");
+//             Console.Write("Name: ");
 
-            string name = Console.ReadLine();
+//             string name = Console.ReadLine();
 
-            Console.Write("Alter: ");
+//             Console.Write("Alter: ");
 
-            int alter = int.Parse(Console.ReadLine());
+//             int alter = int.Parse(Console.ReadLine());
 
-            Informatik.Teilnehmer.Add(new Student(name, alter));
-            Console.WriteLine($"Student {name} hinzugefügt.");
-            break;
+//             Informatik.Teilnehmer.Add(new Student(name, alter));
+//             Console.WriteLine($"Student {name} hinzugefügt.");
+//             break;
 
-        case MenuOptionen.TeilnehmerAnzeigen:
-            Console.WriteLine("Student anzeigen");
+//         case MenuOptionen.TeilnehmerAnzeigen:
+//             Console.WriteLine("Student anzeigen");
 
-            if (Informatik.Teilnehmer.Count == 0)
-            {
-                Console.WriteLine("Keine Studenten in der Liste.");
-            }
-            else
-            {
-                Console.WriteLine("Studenten in der Liste:");
-                foreach (var student in Informatik.Teilnehmer)
-                {
-                    Console.WriteLine($" - {student.Name}, {student.Alter} Jahre");
-                }
-            }
-            break;
+//             if (Informatik.Teilnehmer.Count == 0)
+//             {
+//                 Console.WriteLine("Keine Studenten in der Liste.");
+//             }
+//             else
+//             {
+//                 Console.WriteLine("Studenten in der Liste:");
+//                 foreach (var student in Informatik.Teilnehmer)
+//                 {
+//                     Console.WriteLine($" - {student.Name}, {student.Alter} Jahre");
+//                 }
+//             }
+//             break;
 
-        case MenuOptionen.StatistikAnzeigen:
-            Console.WriteLine("Statistik anzeigen");
-            if (Informatik.Teilnehmer.Count == 0)
-            {
-                Console.WriteLine("Keine Studenten in der Liste.");
-            }
-            else
-            {
-                var avgAlter = Informatik.Teilnehmer.Average(s => s.Alter);
+//         case MenuOptionen.StatistikAnzeigen:
+//             Console.WriteLine("Statistik anzeigen");
+//             if (Informatik.Teilnehmer.Count == 0)
+//             {
+//                 Console.WriteLine("Keine Studenten in der Liste.");
+//             }
+//             else
+//             {
+//                 var avgAlter = Informatik.Teilnehmer.Average(s => s.Alter);
 
-                Console.WriteLine($"Anzahl der Studenten: {Informatik.Teilnehmer.Count}");
-                Console.WriteLine($"Durchschnittliches Alter: {avgAlter}");
-                var aeltesteStudent = Informatik.Teilnehmer.Max(s => s.Alter);
-                Informatik.Teilnehmer.Where(s => s.Alter == aeltesteStudent).ToList().ForEach(s => Console.WriteLine($"Ältester Student: {s.Name}, {aeltesteStudent} Jahre"));
-                var juengsterStudent = Informatik.Teilnehmer.Min(s => s.Alter);
-                Informatik.Teilnehmer.Where(s => s.Alter == juengsterStudent).ToList().ForEach(s => Console.WriteLine($"Jüngster Student: {s.Name}, {juengsterStudent} Jahre"));
-                // Console.WriteLine($"Ältester Student: {aeltesteStudent} Jahre");
-                // Console.WriteLine($"Jüngster Student: {juengsterStudent} Jahre");
-            }
-            break;
+//                 Console.WriteLine($"Anzahl der Studenten: {Informatik.Teilnehmer.Count}");
+//                 Console.WriteLine($"Durchschnittliches Alter: {avgAlter}");
+//                 var aeltesteStudent = Informatik.Teilnehmer.Max(s => s.Alter);
+//                 Informatik.Teilnehmer.Where(s => s.Alter == aeltesteStudent).ToList().ForEach(s => Console.WriteLine($"Ältester Student: {s.Name}, {aeltesteStudent} Jahre"));
+//                 var juengsterStudent = Informatik.Teilnehmer.Min(s => s.Alter);
+//                 Informatik.Teilnehmer.Where(s => s.Alter == juengsterStudent).ToList().ForEach(s => Console.WriteLine($"Jüngster Student: {s.Name}, {juengsterStudent} Jahre"));
+//                 // Console.WriteLine($"Ältester Student: {aeltesteStudent} Jahre");
+//                 // Console.WriteLine($"Jüngster Student: {juengsterStudent} Jahre");
+//             }
+//             break;
 
-        case MenuOptionen.StatusAnzeigen:
-            Console.WriteLine("Status anzeigen:");
-            Console.WriteLine($"Der aktuelle Status des Kurses {Informatik.Titel} ist: {Informatik.Status}");
-            break;
+//         case MenuOptionen.StatusAnzeigen:
+//             Console.WriteLine("Status anzeigen:");
+//             Console.WriteLine($"Der aktuelle Status des Kurses {Informatik.Titel} ist: {Informatik.Status}");
+//             break;
 
-        case MenuOptionen.StatusAendern:
-            Console.WriteLine("Status ändern");
-            Console.WriteLine("Wählen Sie den neuen Status (Offen, Abgeschlossen, Voll):");
-            string neuerStatus = Console.ReadLine().Trim().ToLower();
-            switch (neuerStatus)
-            {
-                case "offen":
-                    Informatik.Status = KursStatus.Offen;
-                    break;
-                case "abgeschlossen":
-                    Informatik.Status = KursStatus.Abgeschlossen;
-                    break;
-                case "voll":
-                    Informatik.Status = KursStatus.Voll;
-                    break;
-                default:
-                    Console.WriteLine("Ungültige Eingabe");
-                    break;
-            }
-            break;
+//         case MenuOptionen.StatusAendern:
+//             Console.WriteLine("Status ändern");
+//             Console.WriteLine("Wählen Sie den neuen Status (Offen, Abgeschlossen, Voll):");
+//             string neuerStatus = Console.ReadLine().Trim().ToLower();
+//             switch (neuerStatus)
+//             {
+//                 case "offen":
+//                     Informatik.Status = KursStatus.Offen;
+//                     break;
+//                 case "abgeschlossen":
+//                     Informatik.Status = KursStatus.Abgeschlossen;
+//                     break;
+//                 case "voll":
+//                     Informatik.Status = KursStatus.Voll;
+//                     break;
+//                 default:
+//                     Console.WriteLine("Ungültige Eingabe");
+//                     break;
+//             }
+//             break;
 
-        case MenuOptionen.ProgrammBeenden:
-            Console.WriteLine("Programm beenden");
-            laeuft = false;
+//         case MenuOptionen.ProgrammBeenden:
+//             Console.WriteLine("Programm beenden");
+//             laeuft = false;
             
-            break;
-        default:
-            Console.WriteLine("Ungültige Eingabe");
-            break;
-    }
+//             break;
+//         default:
+//             Console.WriteLine("Ungültige Eingabe");
+//             break;
+//     }
+//}
+
+// ==={ AUFGABE 15 }===
+
+Student student1 = new Student("Alice", 20);
+Student student2 = new Student("Bob", 22);
+Student student3 = new Student("Charlie", 19);
+
+student1.Bewertungen.Add(new Bewertung(85));
+student1.Bewertungen.Add(new Bewertung(92));
+student2.Bewertungen.Add(new Bewertung(78));
+student2.Bewertungen.Add(new Bewertung(88));
+student3.Bewertungen.Add(new Bewertung(95));
+student3.Bewertungen.Add(new Bewertung(87));
+
+
+List<Student> studenten = new List<Student> { student1, student2, student3 };
+
+var alleBewertungen = studenten.SelectMany(s => s.Bewertungen).ToList();
+
+if (alleBewertungen.Count > 0)
+{
+    int bestanden = alleBewertungen.Count(b => b.BestandenPruefen());
+    int durchgefallen = alleBewertungen.Count(b => !b.BestandenPruefen());
+    double durchschnitt = alleBewertungen.Average(b => b.NoteBerechnen());
+    double besteNote = alleBewertungen.Min(b => b.NoteBerechnen());
+
+    Console.WriteLine("\n=== Gesamtstatistik ===");
+    Console.WriteLine($"Anzahl Studenten: {studenten.Count}");
+    Console.WriteLine($"Anzahl Bewertungen: {alleBewertungen.Count}");
+    Console.WriteLine($"Bestanden: {bestanden}");
+    Console.WriteLine($"Durchgefallen: {durchgefallen}");
+    Console.WriteLine($"Durchschnittsnote: {durchschnitt:F2}");
+    Console.WriteLine($"Beste Note insgesamt: {besteNote:F1}");
+}
+else
+{
+    Console.WriteLine("Es sind keine Bewertungen vorhanden.");
 }

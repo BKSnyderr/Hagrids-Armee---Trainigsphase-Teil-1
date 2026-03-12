@@ -2,39 +2,38 @@ namespace projekt_hagrid.Models;
 
 public class Kurs
 {
-    public string Titel { get; set; }
-    public int MaxTeilnehmer { get; set; }
-    public List<Student> Teilnehmer { get; set; }
-    public KursStatus Status { get; set; }
+    public string _titel { get; set; }
+    public int _maxTeilnehmer { get; set; }
+    public List<Student> _teilnehmer { get; set; } = new List<Student>();
+    public KursStatus _status { get; set; } = KursStatus.Offen;
 
-    public Kurs(string titel, int maxTeilnehmer, KursStatus offen)
+    public Kurs(string titel, int maxTeilnehmer, KursStatus status)
     {
-        Titel = titel;
-        MaxTeilnehmer = maxTeilnehmer;
-        Teilnehmer = new List<Student>();
-        Status = offen;
+        _titel = titel;
+        _maxTeilnehmer = maxTeilnehmer;
+        _status = status;
     }
 
-    public void zeigeTeilnehmer()
+    public void ZeigeTeilnehmer()
     {
-        Console.WriteLine($"Kurs: {Titel}");
+        Console.WriteLine($"Kurs: {_titel}");
         Console.WriteLine("Teilnehmer:");
-        foreach (var student in Teilnehmer)
+        foreach (var student in _teilnehmer)
         {
             Console.WriteLine($"- {student.Name}, Alter: {student.Alter}");
         }
     }
 
-    public void maxTeilnehmer()
+    public void MaxTeilnehmer()
     {
-        Console.WriteLine($"Maximale Teilnehmerzahl für {Titel}: {MaxTeilnehmer}");
-        if (Teilnehmer.Count >= MaxTeilnehmer)
+        Console.WriteLine($"Maximale Teilnehmerzahl für {_titel}: {_maxTeilnehmer}");
+        if (_teilnehmer.Count >= _maxTeilnehmer)
         {
             Console.WriteLine("Der Kurs ist voll.");
         }
         else
         {
-            Console.WriteLine($"Es sind noch {MaxTeilnehmer - Teilnehmer.Count} Plätze frei.");
+            Console.WriteLine($"Es sind noch {_maxTeilnehmer - _teilnehmer.Count} Plätze frei.");
         }
     }
 }

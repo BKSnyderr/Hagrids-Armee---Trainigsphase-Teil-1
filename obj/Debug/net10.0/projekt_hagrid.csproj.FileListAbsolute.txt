@@ -7,9 +7,9 @@ E:\Projekte\c_sharp\projekt_hagrid\obj\Debug\net10.0\projekt_hagrid.GeneratedMSB
 E:\Projekte\c_sharp\projekt_hagrid\obj\Debug\net10.0\projekt_hagrid.AssemblyInfoInputs.cache
 E:\Projekte\c_sharp\projekt_hagrid\obj\Debug\net10.0\projekt_hagrid.AssemblyInfo.cs
 E:\Projekte\c_sharp\projekt_hagrid\obj\Debug\net10.0\projekt_hagrid.csproj.CoreCompileInputs.cache
+E:\Projekte\c_sharp\projekt_hagrid\obj\Debug\net10.0\projekt_hagrid.sourcelink.json
 E:\Projekte\c_sharp\projekt_hagrid\obj\Debug\net10.0\projekt_hagrid.dll
 E:\Projekte\c_sharp\projekt_hagrid\obj\Debug\net10.0\refint\projekt_hagrid.dll
 E:\Projekte\c_sharp\projekt_hagrid\obj\Debug\net10.0\projekt_hagrid.pdb
 E:\Projekte\c_sharp\projekt_hagrid\obj\Debug\net10.0\projekt_hagrid.genruntimeconfig.cache
 E:\Projekte\c_sharp\projekt_hagrid\obj\Debug\net10.0\ref\projekt_hagrid.dll
-E:\Projekte\c_sharp\projekt_hagrid\obj\Debug\net10.0\projekt_hagrid.sourcelink.json

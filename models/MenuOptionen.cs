@@ -1,3 +1,4 @@
+namespace projekt_hagrid.Models;
 public enum MenuOptionen
 {
     StudentHinzufuegen = 1,
